@@ -1,0 +1,13 @@
+{% block content%}
+
+{% for audio in audios %}
+	<div>
+		<audio controls>
+			<source src="{{MEDIA_ROOT}}/media/{{audio.audio}}">
+		</audio>
+		<p>{{ audio.prediction }}</p>
+		<p>{{ audio.utime }}</p>
+	</div>
+{% endfor %}
+
+{%endblock%}

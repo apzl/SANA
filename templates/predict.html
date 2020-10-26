@@ -1,0 +1,8 @@
+{% block content %}
+<h1>Hola</h1>
+<audio controls>
+	<source src={{MEDIA_URL}}/media/{{audio.audio}}>
+</audio>
+<p>{{audio.prediction}}</p>
+
+{% endblock %}
