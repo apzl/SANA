@@ -1,0 +1,77 @@
+{% load static %}
+ <!doctype html>
+ <html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	  
+		<title>SANA</title>
+		<meta content="" name="descriptison">
+		<meta content="" name="keywords">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<!-- Favicons -->
+		<link href="{% static 'img/radio.png' %}" rel="icon">
+		<link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+	  
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	  
+		<!-- Vendor CSS Files -->
+		<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+		<link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+		<link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+		<link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+		<link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+	  
+		<!-- Template Main CSS File -->
+		<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	  
+		<!-- =======================================================
+		* Template Name: Appland - v2.2.0
+		* Template URL: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/
+		* Author: BootstrapMade.com
+		* License: https://bootstrapmade.com/license/
+		======================================================== -->
+     <title>
+	   {% block title %}
+       {{ page_title|default:"SANA" }}
+       {% endblock title %}
+	 </title>	
+   </head>
+ 
+   <body>
+
+	  <!-- ======= Header ======= -->
+	  <header id="header" class="fixed-top  header-transparent ">
+		<div class="container d-flex align-items-center">
+	
+		  <div class="logo mr-auto">
+			<h1 class="text-light"><a href="index.html"><img src="{% static 'img/radio.png' %}"> SANA</a></h1>
+			<!-- Uncomment below if you prefer to use an image logo -->
+			<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+		  </div>
+	
+		  <nav class="nav-menu d-none d-lg-block">
+			<ul>
+			  <li class="active"><a href="">Home</a></li>
+			  <li><a href="#features">App Features</a></li>
+			  <li><a href="#gallery">Gallery</a></li>
+			  <li><a href="#pricing">Pricing</a></li>
+			  <li><a href="#faq">F.A.Q</a></li>
+			  <li><a href="#contact">Contact Us</a></li>
+	
+			  <li class="get-started"><a href="#footer">Upload</a></li>
+			</ul>
+		  </nav><!-- .nav-menu -->
+	
+		</div>
+	  </header><!-- End Header -->
+     {% block content %}
+     <p>Placeholder text in base template. Replace with page  content.</p>
+     {% endblock content %}
+   </body>
+
+ </html>

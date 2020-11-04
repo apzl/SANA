@@ -1,8 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<h1>Hola</h1>
-<audio controls>
-	<source src={{MEDIA_URL}}/media/{{audio.audio}}>
-</audio>
-<p>{{audio.prediction}}</p>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+<section>
+  
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade audio-popup" id="myModal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-8 mt-5 ml-5 mr-2 p-3">
+			        <audio id="player" controls>
+			        	<source src={{MEDIA_URL}}/media/{{audio.audio}}>
+              </audio></div>
+              <div class="col-lg-8 mt-5 ml-5 mr-2 p-3"> <p class="text-center">{{audio.prediction}}</p></div>
+            </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <a href="{% url 'upload_audio' %}"><button  type="button" class="btn btn-default btn-lg">Close</button></a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</section>
+<script>
+	 $(document).ready(function() { $('.audio-popup').modal({ show: true, }) }); 
+</script>
+
+
 
 {% endblock %}
