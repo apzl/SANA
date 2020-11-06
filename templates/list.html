@@ -1,12 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
 {% block content%}
-
+<p><br><br><br><br><br><br></p>
 {% for audio in audios %}
-	<div>
-		<audio controls>
-			<source src="{{MEDIA_ROOT}}/media/{{audio.audio}}">
-		</audio>
-		<p>{{ audio.prediction }}</p>
-		<p>{{ audio.utime }}</p>
+	<div class="lparent">
+		<div class="lchild">
+			<audio controls>
+				<source src="{{MEDIA_ROOT}}/media/{{audio.audio}}">
+			</audio>
+		</div>
+		<div class="lchild" style="font-size: 20px; color: blueviolet ;">
+			<p>{{ audio.prediction }}</p>
+		</div>
+		<div class="lchild" style="font-size: 15px;">
+			<p>{{ audio.utime }}</p>
+		</div>
 	</div>
 {% endfor %}
 

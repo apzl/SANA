@@ -15,16 +15,16 @@ from . models import Audio
 from . serializers import AudioSerializer
 
 
-from fastai import *
-from fastai.vision import *
+# from fastai import *
+# from fastai.vision import *
 
-import pickle
-import librosa
-import librosa.display
-import numpy as np
-from pathlib import Path  
-import matplotlib.pyplot as plt
-from matplotlib.pyplot import specgram
+# import pickle
+# import librosa
+# import librosa.display
+# import numpy as np
+# from pathlib import Path  
+# import matplotlib.pyplot as plt
+# from matplotlib.pyplot import specgram
 
 
 class AudioViewSet(viewsets.ModelViewSet):
@@ -36,17 +36,17 @@ def upload_audio(request):
     if request.method=='POST':
         form=AudioForm(request.POST, request.FILES)
         if form.is_valid():
-            audio_file=Audio(audio=request.FILES['audio'])
-            audio=request.FILES['audio']
-            spec=audio_to_spec(audio,audio_file)
-            i=spec[6:]
-            prediction=predict_class(Path(spec))
-            a=Audio(audio=audio,spec=i,prediction=prediction)
-            a.save()
+            # audio_file=Audio(audio=request.FILES['audio'])
+            # audio=request.FILES['audio']
+            # spec=audio_to_spec(audio,audio_file)
+            # i=spec[6:]
+            # prediction=predict_class(Path(spec))
+            # a=Audio(audio=audio,spec=i,prediction=prediction)
+            # a.save()
             return HttpResponseRedirect('/predict')
-    else:
-        a=Audio()
-    return render(request,'home.html',{'audio':a})
+    # else:
+        # a=Audio()
+    return render(request,'home.html')
     
 def predict_audio(request):
     audio=Audio.objects.all().last()
