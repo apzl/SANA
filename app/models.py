@@ -11,6 +11,9 @@ class Audio(models.Model):
 	prediction = models.CharField(max_length=20,null=True)
 
 	def __str__(self):
-		return self.prediction	
+		if(self.prediction):
+			return self.prediction	
+		else:
+			return "none"
 
 	

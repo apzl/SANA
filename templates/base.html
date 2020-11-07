@@ -8,6 +8,8 @@
 		<title>SANA</title>
 		<meta content="" name="descriptison">
 		<meta content="" name="keywords">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -56,11 +58,12 @@
 	
 		  <nav class="nav-menu d-none d-lg-block">
 			<ul>
-			  <li class="active"><a href="">Home</a></li>
-			  <li><a href="#faq">F.A.Q</a></li>
+			  <li class="active"><a href="{% url 'upload_audio' %}">Home</a></li>
+			  <li><a href="{% url 'list_audio' %}">Data</a></li>
 			  <!-- <li><a href="#contact">Contact Us</a></li> -->
 	
 			  <li class="get-started"><a href="#footer">Upload</a></li>
+			  <li ><a href="{% url 'record_audio' %}"><i class="fa fa-microphone" aria-hidden="true" style="font-size:30px"></i></a></li>
 			</ul>
 		  </nav><!-- .nav-menu -->
 	
