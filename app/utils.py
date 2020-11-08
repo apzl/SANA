@@ -46,9 +46,7 @@ def convert_to_wav(filename):
 def record_audio():
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        r.adjust_for_ambient_noise(source)  
-        #print("Say something!")
-        audio = r.listen(source,phrase_time_limit=4)
+        audio = r.listen(source,phrase_time_limit=5)
     basename = "audio"
     suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
     filename = "_".join([basename, suffix])
