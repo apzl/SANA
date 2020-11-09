@@ -37,7 +37,10 @@ def upload_audio(request):
         form=AudioForm(request.POST, request.FILES)
         if form.is_valid():
             audio=request.FILES['audio']
-            if(audio.content_type!="audio/x-wav"):
+            print(audio.content_type)
+            if(audio.content_type[:5]!="audio"):
+                return HttpResponseRedirect('/404')
+            elif(audio.content_type!="audio/x-wav"):
                 audio=utils.convert_to_wav(audio)
                 spec=utils.audio_to_spec(Path(audio))
                 audio=audio[6:]
